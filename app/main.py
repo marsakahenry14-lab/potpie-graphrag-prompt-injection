@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 import asyncio
 from typing import Dict, Any
+from app.schemas.compliance import EnterpriseComplianceRecord
 
 app = FastAPI(
     title="Enterprise Compliance Gateway",
@@ -36,6 +37,20 @@ async def validate_compliance() -> Dict[str, Any]:
     return {
         "validation_result": "pending",
         "compliance_status": "awaiting_input",
+        "timestamp": asyncio.get_event_loop().time()
+    }
+
+@app.post("/api/v1/compliance/verify")
+async def verify_compliance(record: EnterpriseComplianceRecord) -> Dict[str, Any]:
+    """
+    Verify compliance status for a specific entity.
+    This endpoint requires the EnterpriseComplianceRecord schema for input validation.
+    """
+    return {
+        "entity_id": record.entity_id,
+        "compliance_type": record.compliance_type,
+        "validation_status": record.validation_status,
+        "verification_result": "processed",
         "timestamp": asyncio.get_event_loop().time()
     }
 
