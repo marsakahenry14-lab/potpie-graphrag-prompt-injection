@@ -1,3 +1,9 @@
+> This note is kept as originally written (April 2026) as a historical
+> record. Two things below have since changed and are corrected inline:
+> the classification (CWE-1387 is not a valid mapping target — see note)
+> and the advisory link (now published in this same repository). Everything
+> else is left as-is.
+
 *SECURITY RESEARCH PROJECT**
 
 This repository serves as a proof-of-concept for demonstrating 
@@ -11,11 +17,14 @@ to indirect prompt injection attacks.
 
 ## Vulnerability Details
 - **Type**: Indirect Prompt Injection via GraphRAG
-- **CWE**: CWE-1387
+- **CWE**: ~~CWE-1387~~ **CWE-1427** (corrected — CWE-1387 is a MITRE View,
+  not a mappable weakness; see `../ADVISORY.md#classification`)
 - **CVSS**: 7.5 (High)
 - **CVSS Vector**: `CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:L`
-- **Target**: Potpie AI (responsible disclosure completed)
-- **CVE**: Pending (submitted to MITRE)
+- **Target**: Potpie AI (responsible disclosure completed, no response received)
+- **CVE**: Requested from MITRE (tracking `#2027937`, 2026-04-20); no CVE ID
+  was ever assigned and no further response was received — see
+  `../docs/TIMELINE.md`
 
 ## Research Context
 Part of independent security audit conducted in March 2026.
@@ -26,9 +35,9 @@ Part of independent security audit conducted in March 2026.
 - April 8, 2026: 30-day window expired
 - March 2026: Public advisory released
 
-**Full advisory:** 
-- [LinkedIn](https://www.linkedin.com/in/marsel-sultanov-719873373)
-- [Public Advisory PDF](ссылка_на_твой_PDF_когда_опубликуешь)
+**Full advisory:**
+- [`../ADVISORY.md`](../ADVISORY.md) — now published, in this repository
+- [LinkedIn announcement](https://www.linkedin.com/posts/marsel-sultanov-719873373_technical-advisory-graphrag-prompt-injection-ugcPost-7478772826968121344-Y3uH/)
 
 ## Attack Pattern
 1. Malicious instruction embedded in code documentation (docstrings)
@@ -40,8 +49,8 @@ Part of independent security audit conducted in March 2026.
 ## Proof of Concept
 This repository contains:
 - `app/schemas/compliance.py` — file with embedded payload
-- `trigger_resilience_local.py` — testing script (sanitized)
-- Technical artifacts demonstrating the vulnerability
+- `../poc/trigger_resilience_local.py` — testing script (sanitized)
+- Technical artifacts demonstrating the vulnerability (see `../docs/EVIDENCE.md`)
 
 ## Impact
 - ✅ Agent compromise via tool execution
