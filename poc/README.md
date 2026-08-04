@@ -13,4 +13,4 @@ itself lives in [`../honeypot/`](../honeypot).
 For a deterministic, dependency-free, immediately runnable reproduction of
 the *current* (August 2026) architecture's version of this problem, see
 [`potpie-context-provenance`](https://github.com/marsakahenry14-lab/potpie-context-provenance)
-(part 2 of this disclosure — link will 404 until that repo is published).
+(part 2 of this disclosure).

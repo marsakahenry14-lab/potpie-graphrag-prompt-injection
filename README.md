@@ -63,7 +63,7 @@ was fixed. It wasn't — but the mechanism that made it possible no longer
 exists either; Potpie's codebase changed substantially in between, and a
 new instance of the same underlying defect turned up in different code.
 See [`potpie-context-provenance`](https://github.com/marsakahenry14-lab/potpie-context-provenance)
-(part 2 — link will 404 until that repo is published).
+(part 2).
 
 ## License
 
