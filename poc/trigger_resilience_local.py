@@ -10,8 +10,8 @@ HISTORICAL. Not intended to be run against a live target:
   - Requires your own AGENT_ROUTER_BASE_URL / AGENT_ROUTER_API_KEY
     (a LiteLLM-compatible router) to do anything at all.
   - This script belongs to the researcher's own test harness, not to
-    Potpie's codebase -- it is unrelated to (and predates) the later
-    finding in ../../potpie-context-provenance that Potpie's own stack no
+    Potpie's codebase -- it is unrelated to (and predates) a later finding,
+    in the potpie-context-provenance repository, that Potpie's own stack no
     longer depends on LiteLLM.
 
 What it actually tested: given a payload containing an embedded directive,

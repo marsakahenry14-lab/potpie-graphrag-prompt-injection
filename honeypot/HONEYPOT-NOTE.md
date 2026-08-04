@@ -4,7 +4,7 @@
 > and the advisory link (now published in this same repository). Everything
 > else is left as-is.
 
-*SECURITY RESEARCH PROJECT**
+**SECURITY RESEARCH PROJECT**
 
 This repository serves as a proof-of-concept for demonstrating 
 Indirect Prompt Injection vulnerabilities in GraphRAG-based 
